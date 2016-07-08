@@ -9,8 +9,11 @@ Longest Common Subsequence 双序列型dp
 3. Longest Substring Without Repeating Characters 双指针
 Longest Palindromic Substring 区间类dp
 159. Longest Substring with At Most Two Distinct Characters
-java api
 
+subarray问题
+
+
+java api
 substring(being,end)时候，begin包括，end不包括，一般时候要end+1
 int[][] dp = new int[m][n]
 String a  a.length()

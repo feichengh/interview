@@ -1,0 +1,77 @@
+Two Pointer
+
+1. 一个数组上的对撞指针
+先要说为什么比暴力解法好：O(n2)的算法优化到O(n)，排除多余的可能性
+模板
+while(i <= j){
+  if(A[i] + A[j] > sum){
+  	j--;
+  	do something
+  } else if(A[i] + A[j] < sum){
+  	i++;
+  	do something
+  } else {
+   	do something
+   	i++ or j--
+  }
+}
+  
+
+while(i <= j){
+  if(A[i] > A[j])
+  	j--;
+  else if(A[i] < A[j])
+  	i++;
+  else
+  	i++; or j--;
+}
+2. Partition的两个指针
+quick select
+模板：
+public void partition(int l, int r, int[] nums){
+	int left = l;
+	int right = r;
+	//挖空left
+	int pivot = nums[left];
+	while(left < right){
+		//这里比大小看具体情况
+		while(nums[right] <= pivot&& right > left){
+			right--;
+		}
+		nums[left] = nums[right];
+		while(nums[left] >= pivot && right > left){
+			left++;
+		}
+		nums[right] = nums[left];
+	}
+	//把空填回去
+	nums[left] = pivot;
+	return left;
+}
+
+
+
+3. 窗口类两个指针 
+先要说为什么比暴力解法好：O(n2)的算法优化到O(n)，排除多余的可能性
+应用题型：数组里找一个子数组满足一定条件，求子数组的大小
+与滑动窗口的区别：滑动窗口是固定的的窗口大小，所以每次移动要前指针加一，后指针减一，这里是就是求满足要求的窗口的大小
+题目：3. Longest Substring Without Repeating Characters
+	 76. Minimum Window Substring
+	 159. Longest Substring with At Most Two Distinct Characters
+	 209. Minimum Size Subarray Sum
+	 340. Longest Substring with At Most K Distinct Characters
+模板
+int i,j = 0;
+for(i = 0; i < n; i++){
+	while(j < n && 不满足条件){
+			j++;
+			更新j状态
+	}
+	更新答案
+	更新i状态
+}
+
+4. 快慢指针
+主要应用是链表判断环，找中点
+
+5. 两个数组两个指针

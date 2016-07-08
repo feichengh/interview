@@ -34,3 +34,5 @@ merge sort空间复杂度 O(n) 稳定排序 有两个同样的数，排完序能
 quick sort空间复杂度 O(1) 不稳定排序 平均时间是nlogn
 
 merge k sorted list时间复杂度都是nlogk
+
+数组划分分为：二分和三分

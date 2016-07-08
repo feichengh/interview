@@ -1,0 +1,107 @@
+Binary Serach
+T(n) = T(n/2) + O(1) = O(logn)
+1.模板
+  把范围不断变小，最后小到可以手动处理
+  start + 1 < end的退出条件是start和end相邻或者相交，所以最后单独分析一下start和end
+
+  找到第一个满足条件的
+   public int binarySearch(int[] nums, int target){
+  	if( nums == null || nums.length == 0){
+  		return -1;
+  	}
+  	int start = 0;
+  	int end = nums.length - 1;
+  	while(start + 1 < end){
+  		int mid = start + (end - start) / 2;
+  		if(nums[mid] == target) {
+  			//能直接return mid; 也不能写成start = mid + 1因为也许mid就是最后一个，这样就跳过了
+  			//所以这里循环条件就不能变成start < end，会死循环。start < end 必须要对应 start = mid + 1;
+  			end = mid;
+  		} else if(nums[mid] < target){
+  			start = mid;
+  		} else {
+  			end = mid;
+  		}
+  	}
+	先看start是不是
+  	if(nums[start] == target){
+  		return start;
+  	}
+  	if(nums[end] == target){
+  		return end;
+  	}
+  	
+  }
+
+
+  找到最后一个满足条件的
+   public int binarySearch(int[] nums, int target){
+  	if( nums == null || nums.length == 0){
+  		return -1;
+  	}
+  	int start = 0;
+  	int end = nums.length - 1;
+  	while(start + 1 < end){
+  		int mid = start + (end - start) / 2;
+  		if(nums[mid] == target) {
+  			//能直接return mid; 也不能写成start = mid + 1因为也许mid就是最后一个，这样就跳过了
+  			//所以这里循环条件就不能变成start < end，会死循环。start < end 必须要对应 start = mid + 1;
+  			start = mid;
+  		} else if(nums[mid] < target){
+  			start = mid;
+  		} else {
+  			end = mid;
+  		}
+  	}
+	先看end是不是
+	if(nums[end] == target){
+  		return end;
+  	}
+  	if(nums[start] == target){
+  		return start;
+  	}
+  	
+  }
+
+  找到随便一个满足条件的
+  public int binarySearch(int[] nums, int target){
+  	if( nums == null || nums.length == 0){
+  		return -1;
+  	}
+  	int start = 0;
+  	int end = nums.length - 1;
+  	//另外一种也可以start < end start = mid + 1/end = mid - 1, 配套写。
+  	while(start + 1 < end){
+  		int mid = start + (end - start) / 2;
+  		if(nums[mid] == target) {
+  			return mid;
+  		} else if(nums[mid] < target){
+  			start = mid;
+  		} else {
+  			end = mid;
+  		}
+  	}
+
+  	if(nums[start] == target){
+  		return start;
+  	}
+  	if(nums[end] == target){
+  		return end;
+  	}
+  }
+
+
+2. 如何把mid转换到二维数组上
+   int row = mid / m;
+   int col = mid % m;
+
+3. Search in big sorted array，太大了右边界end找不到
+   找第一个比target大的位置当做end，index不停地乘以2来找
+   int index = 1;
+   while(nums[index] < target){
+   		index = index * 2;
+   }
+4. 二分答案
+   sqrt(x) 乘法时候int会溢出，要变成long
+
+

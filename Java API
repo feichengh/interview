@@ -1,0 +1,31 @@
+Java API:
+
+Queue<> q = new LinkedList<>();
+q.offer();
+q.poll();
+q.isEmpty();
+
+本质是一样的，add(E) might throw an exception while offer(E) will simply return false.
+
+
+max = (a > b) ? a : b;
+
+treemap本来就是按照key排序好的
+
+Iterator it = map.entrySet().iterator();
+while (it.hasNext()) {
+    Map.Entry pair = (Map.Entry)it.next();
+    result.add((List<Integer>)pair.getValue());
+    it.remove(); // avoids a ConcurrentModificationException
+ }
+
+    private Comparator<Pair> pairComparator = new Comparator<Pair>() {
+        public int compare(Pair left, Pair right) {
+            if (left.value != right.value) {
+                return left.value - right.value;
+            }
+            return right.key.compareTo(left.key);
+        }
+    };
+
+    Queue<Integer> q = new PriorityQueue<Integer>(k,pairComparator);//建k大小的堆

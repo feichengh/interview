@@ -1,0 +1,54 @@
+Graph & Search
+表示方法：
+邻接表，邻接矩阵
+
+一个人走棋盘的问题：
+如果一个人走的方向可以是上下左右四个方向的话一般就是宽度优先搜索
+如果一个人走的方向只能是向下或者向右的话基本就是动态规划
+
+为什么用宽度优先搜索：
+通过一个点，找其他所有的点的时候一般都用宽搜（图的遍历）
+求最短路径
+
+时间复杂度：
+O（m+n）其实是O(2m+2n) 每个边走两次每个点也走两次
+
+在图上做宽搜和在树上做宽搜上的最大的区别：
+在图上做宽搜的时候需要另外一个hashset的辅助记录哪些点已经访问过了，树不会从儿子走向父亲
+
+
+private ArrayList<UndirectedGraphNode> getNodes(UndirectedGraphNode node) {
+        Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+        HashSet<UndirectedGraphNode> set = new HashSet<>();
+        
+        queue.offer(node);
+        set.add(node);
+        while (!queue.isEmpty()) {
+        //level order时候，这里加套一层for循环  
+        //level++; 
+        //int size = queue.size();
+        //for(int i = 0; i < size; i ++){
+
+        //}
+            UndirectedGraphNode head = queue.poll();
+            for (UndirectedGraphNode neighbor : head.neighbors) {
+                if(!set.contains(neighbor)){
+                    set.add(neighbor);
+                    queue.offer(neighbor);
+                }
+            }
+        }
+        
+        return new ArrayList<UndirectedGraphNode>(set);
+    }
+
+
+为什么用深度优先搜索
+
+组合 2的n次方  subset
+排列 n!  permutation  
+都是指数级别的复杂度，要用搜索来做
+
+DFS的时间复杂度通用公式（所有方案数乘以构造每个方案的时间）
+	组合 n乘以2的n次方
+	排列 n乘以nI

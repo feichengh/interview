@@ -1,0 +1,10 @@
+HashMap
+
+Open Hashing 放一个链表
+
+LRU LinkedHashMap = DoublyLinkedList + HashMap
+
+Heap (PriorityQueue)
+Add  Ologn
+Remove Ologn
+Min Max O1

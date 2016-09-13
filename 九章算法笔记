@@ -36,3 +36,12 @@ quick sort空间复杂度 O(1) 不稳定排序 平均时间是nlogn
 merge k sorted list时间复杂度都是nlogk
 
 数组划分分为：二分和三分
+
+
+找零问题 为什么要用动归
+单调栈
+linkedhashmap就是做lru cashe的
+tree map = balanced binary search tree
+
+节点个数乘以节点耗费
+桶排序

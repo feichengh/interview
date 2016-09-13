@@ -1,0 +1,53 @@
+LinkedList：
+
+什么时候使用 Dummy Node?
+• 当链表的结构发生变化时
+• 也就是当需要返回的链表的头不确定的时候
+构建新链表时候
+
+
+1. Insert a Node in Sorted List
+
+2. Remove a Node from Linked List
+
+3. Reverse a Linked List
+	public ListNode reverse(ListNode head) {
+    	ListNode pre = null;
+    	while(head != null){
+    		ListNode temp = head.next;
+    		head.next = pre;
+    		pre = head;
+    		head = temp;
+    	}
+    	return pre;
+    }
+4. Merge Two Linked Lists
+	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+       ListNode head1 = l1;
+       ListNode head2 = l2;
+       ListNode dummyHead = new ListNode(0);
+       ListNode finalHead = dummyHead;
+       while(head1 != null && head2 != null){
+           if(head1.val > head2.val){
+               dummyHead.next = head2;
+               head2 = head2.next;
+           }else{
+               dummyHead.next = head1;
+               head1 = head1.next;
+           }
+           dummyHead = dummyHead.next;
+       }
+       
+       if(head1 != null){
+           dummyHead.next = head1;
+       }
+       if(head2 != null){
+           dummyHead.next = head2;
+       }
+       
+       return finalHead.next;
+       
+       
+    }
+
+5. Middle of a Linked List

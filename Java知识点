@@ -124,6 +124,8 @@
 
 	RACE condition : While doing the rehasing internal elements which are stored in a linked list for given bucket. They get reverse in the order. Suppose there are two threads encounter the race condition in same time then there are chances of second therad can go in infinite loop while traversal since the order has been changed.
 
+	The load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased. When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets
+
 7. Java Nested Class
 
 	http://tutorials.jenkov.com/java/nested-classes.html

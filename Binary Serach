@@ -3,7 +3,7 @@ T(n) = T(n/2) + O(1) = O(logn)
 1.模板
   把范围不断变小，最后小到可以手动处理
   start + 1 < end的退出条件是start和end相邻或者相交，所以最后单独分析一下start和end
-
+  这个模板的好处是，不会错过元素
   找到第一个满足条件的
    public int binarySearch(int[] nums, int target){
   	if( nums == null || nums.length == 0){

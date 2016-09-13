@@ -1,0 +1,41 @@
+
+leetcode,lintcode题目归类
+
+1， 2个排好序的数组合并
+
+合并排序数组 II  
+给出 A = [1, 2, 3, empty, empty], B = [4, 5]
+合并之后 A 将变成 [1,2,3,4,5]
+
+
+2, 左右分治，创造两个数组，左数组对于每个元素的左边，右数组计算对于每个元素右边所有的元素
+
+数组剔除元素后的乘积
+给定一个整数数组A。
+定义B[i] = A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1]， 计算B的时候请不要使用除法。给出A=[1, 2, 3]，返回 B为[6, 3, 2]
+
+Leetcode
+
+(1) 斐波那契数列通项公式 O(logn) general term 
+(2) 很多时候可以使用hashset,HashSet<Integer> set = new HashSet<Integer>();
+
+LIS 类似问题总结
+300. Longest Increasing Subsequence 坐标型dp
+Longest Common Subsequence 双序列型dp
+3. Longest Substring Without Repeating Characters 双指针
+Longest Palindromic Substring 区间类dp
+159. Longest Substring with At Most Two Distinct Characters
+
+subarray问题
+
+if(result>Integer.MAX_VALUE/10){
+    return 0;
+}
+
+java api
+substring(being,end)时候，begin包括，end不包括，一般时候要end+1
+int[][] dp = new int[m][n]
+String a  a.length()
+将char变成整数时候可以a.charAt(i) - '0'
+怕整数溢出可以先用double存，最后判断是不是比int.max_value大
+Array.fills(数组，数)

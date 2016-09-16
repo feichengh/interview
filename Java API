@@ -30,10 +30,18 @@ StringBuilder.deleteCharAt(tempRes.length() -1 );
 
 ArrayList.add(pos,value);
 ArrayList.remove(value);
+ArrayList.set(index, val);
 Collections.reverse(res);
 
 map.values()
 map.keySet()
 
 int forwardSlashIndex = s.indexOf('/', index);
+s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
+Cast:
+String to Integer: Integer.parseInt(s)
+Char to Int:  Character.getNumericValue(c)
+a-z字符转数组 s.charAt(i) - 'a'
+
+注意这里是double,否则除出来是整数

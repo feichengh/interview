@@ -41,8 +41,19 @@ Query Service (in request, out response)
 
 问题是内存的trie断了电就没了，要在磁盘里面存一个serialized副本 （serilize deserilize tree类似）
 
-
 Data Collection Service 负责收集高频词，定期一运行更新高频词
-记录谁谁谁在什么时候搜了一个什么词
+记录谁谁谁在什么时候搜了一个什么词,非常大的一个表
 做group by操作，计算每个词和hit count
 更新trie时候用户query会受影响，所以先克隆一个改。
+
+如何衡量这个系统的好坏呢？响应时间和结果质量
+如何再提速？ brower cache
+（1）在用户浏览器cache，比如打don时候就把don结果存在浏览器缓存里，后来用户打donab，删了ab又变成don的时候，就不用再去向服务器要了。
+（2）提前抓取，提前抓1000个热门词存在本地
+
+
+
+
+
+
+

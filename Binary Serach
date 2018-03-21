@@ -1,41 +1,42 @@
 Binary Serach
-T(n) = T(n/2) + O(1) = O(logn)
+T(N) = T(N/2) + O(1) = O(logN) 二分法，通过O(1)的时间把规模为n的问题变成n/2
+T(N) = T(N/2) + O(N) = O(N) 
+
 1.模板
   把范围不断变小，最后小到可以手动处理
   start + 1 < end的退出条件是start和end相邻或者相交，所以最后单独分析一下start和end
-  这个模板的好处是，不会错过元素
+  这个模板的好处是，不会错过元素.
+
   找到第一个满足条件的
-   public int binarySearch(int[] nums, int target){
+  public int binarySearch(int[] nums, int target){
   	if( nums == null || nums.length == 0){
   		return -1;
   	}
-  	int start = 0;
-  	int end = nums.length - 1;
+  	int start = 0, end = nums.length - 1;
   	while(start + 1 < end){
   		int mid = start + (end - start) / 2;
   		if(nums[mid] == target) {
-  			//能直接return mid; 也不能写成start = mid + 1因为也许mid就是最后一个，这样就跳过了
-  			//所以这里循环条件就不能变成start < end，会死循环。start < end 必须要对应 start = mid + 1;
+  			//不能直接return mid; 也不能写成end = mid - 1，因为也许mid就是第一个，这样就跳过了
   			end = mid;
   		} else if(nums[mid] < target){
   			start = mid;
   		} else {
   			end = mid;
   		}
-  	}
-	先看start是不是
+    }
+	  //先看start是不是
   	if(nums[start] == target){
   		return start;
   	}
+    //再看end是不是  
   	if(nums[end] == target){
   		return end;
   	}
-  	
   }
 
 
   找到最后一个满足条件的
-   public int binarySearch(int[] nums, int target){
+  public int binarySearch(int[] nums, int target){
   	if( nums == null || nums.length == 0){
   		return -1;
   	}
@@ -44,8 +45,7 @@ T(n) = T(n/2) + O(1) = O(logn)
   	while(start + 1 < end){
   		int mid = start + (end - start) / 2;
   		if(nums[mid] == target) {
-  			//能直接return mid; 也不能写成start = mid + 1因为也许mid就是最后一个，这样就跳过了
-  			//所以这里循环条件就不能变成start < end，会死循环。start < end 必须要对应 start = mid + 1;
+  			//不能直接return mid; 也不能写成start = mid + 1因为也许mid就是最后一个，这样就跳过了
   			start = mid;
   		} else if(nums[mid] < target){
   			start = mid;
@@ -53,14 +53,14 @@ T(n) = T(n/2) + O(1) = O(logn)
   			end = mid;
   		}
   	}
-	先看end是不是
-	if(nums[end] == target){
-  		return end;
-  	}
-  	if(nums[start] == target){
-  		return start;
-  	}
-  	
+	  先看end是不是
+	  if(nums[end] == target){
+  	  return end;
+    }
+    再看start是不是  
+    if(nums[start] == target){
+  	  return start;
+    }
   }
 
   找到随便一个满足条件的
@@ -70,7 +70,6 @@ T(n) = T(n/2) + O(1) = O(logn)
   	}
   	int start = 0;
   	int end = nums.length - 1;
-  	//另外一种也可以start < end start = mid + 1/end = mid - 1, 配套写。
   	while(start + 1 < end){
   		int mid = start + (end - start) / 2;
   		if(nums[mid] == target) {
@@ -90,8 +89,20 @@ T(n) = T(n/2) + O(1) = O(logn)
   	}
   }
 
+另外一种也可以start < end start = mid + 1/end = mid - 1, 配套写。
 
-2. 如何把mid转换到二维数组上
+死循环的发生 Last Position of Target
+nums = [1,1], target = 1
+使用 start < end 无论如何都会出现死循环
+
+
+二分位置，在一个数组里找一个满足条件的数的位置(index)
+二分答案，没有数组（sqrt(x)）
+
+2. 二维数组换为一维数组
+   如何把mid转换到二维数组上
+   int start = 0, end = n * m - 1;
+   iint mid = start + (end - start) / 2
    int row = mid / m;
    int col = mid % m;
 

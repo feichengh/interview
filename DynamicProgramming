@@ -18,13 +18,47 @@ Dynamic Programming
 循环第一层一般是从i=1开始，因为0位置已经初始化过了
 
 坐标型dp
-64. Minimum Path Sum 
-62.	Unique Paths
-63.	Unique Paths II
-70.	Climbing Stairs
-55.	Jump Game
-45.	Jump Game II
-300	Longest Increasing Subsequence
+64. Minimum Path Sum （You can only move either down or right at any point in time.）
+62. Unique Paths
+63. Unique Paths II
+70. Climbing Stairs
+55. Jump Game
+45. Jump Game II
+300. Longest Increasing Subsequence //初始化所有都是1，因为不知道哪里是最后结果的起点，所以所有都要初始化
+935. Knight Dialer n3 三维dp通过交换两个2维dp数组实现
+983. Minimum Cost For Tickets 循环365天，要出行的那天就是 dp[i] = smin(i-7, I-5, i)
+1027. Longest Arithmetic Sequence
+
+数组
+ boolean[] can = new boolean[nums.length];
+        can[0] = true;
+        //循环起始可能是0也可能是1
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (can[j] && j + nums[j] >= i) {
+                    can[i] = true;
+                    break;
+                }
+            }
+        }
+
+矩阵
+for(int i = 0; i < dp.length;i++){
+            for(int j = 0; j < dp[i].length; j++){
+                if(i == 0 && j == 0){
+                    dp[i][j] = grid [i][j];
+                }
+                else if(i==0 && j !=0){
+                    dp[i][j] = grid[i][j] + dp[i][j-1];
+                } else if (j==0&&i!=0){
+                     dp[i][j] = grid[i][j] + dp[i-1][j];
+                } else {
+                    dp[i][j] = grid[i][j] + Math.min(dp[i-1][j],dp[i][j-1]);
+                }
+
+            }
+        }
+
 
 开n大小的数组dp[n]
 dp[x]表示从起点走到坐标x
@@ -32,9 +66,22 @@ dp[x][y]表示从起点走到坐标(x,y)
 没有给起点的话就是之前任意点到当前坐标
 答案 dp[n-1]
 
+
+
+
+
+
 单序列型dp 
-139	Word Break
-131	Palindrome Partitioning
+139 Word Break
+91. Decode Ways
+        for(int i = 2; i <= s.length() ;i++){
+            if(valid(s.substring(i-2, i)))
+                dp[i] += dp[i-2]; 
+            if(valid(s.substring(i-1, i)))
+                dp[i] += dp[i-1];
+        }
+
+
 
 开n+1大小的数组dp[n+1],dp[i]表示前i个字符，0的时候（前0个字符）当做空串初始化
 n vs n+1
@@ -73,12 +120,13 @@ n vs n+1
 正方形类dp
 dp[i][j] 定义为在i,j位置为右下位置，向左上拓展的最大正方形的边长
 所以 dp[i][j]依赖于dp[i-1][j-1],还有向左边[i-1][j]的矩形，和向上面[i][j-1]的矩形三个值得最小值
-221	Maximal Square
+221 Maximal Square
+304. Range Sum Query 2D - Immutable 先算dp矩阵，为以i,j为右下点的矩阵和
 
 长方形类dp
 
 划分类dp（是单序列的优化，单序列全部都是on2的复杂度两层for循环，这里优化为n）
-53	Maximum Subarray
+53.Maximum Subarray
 152. Maximum Product Subarray
 
 global[i]表示全局前i个元素满足条件的最大值，不管i选或不选

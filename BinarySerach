@@ -53,14 +53,14 @@ T(N) = T(N/2) + O(N) = O(N)
   			end = mid;
   		}
   	}
-	  先看end是不是
-	  if(nums[end] == target){
+	先看end是不是
+	if(nums[end] == target){
   	  return end;
-    }
-    再看start是不是  
-    if(nums[start] == target){
+        }
+        再看start是不是  
+        if(nums[start] == target){
   	  return start;
-    }
+        }
   }
 
   找到随便一个满足条件的
@@ -89,11 +89,12 @@ T(N) = T(N/2) + O(N) = O(N)
   	}
   }
 
-另外一种也可以start < end start = mid + 1/end = mid - 1, 配套写。
+另外一种也可以start < end start = mid + 1/end = mid - 1, 最后不需要判断nums[end] == target只判断nums[start] == target,配套写。
 
-死循环的发生 Last Position of Target
+为什么start + 1 < end 好一些呢？可以避免死循环的发生 Last Position of Target
 nums = [1,1], target = 1
 使用 start < end 无论如何都会出现死循环
+如果用start + 1 < end 相邻或相交就退出 保险一点
 
 
 二分位置，在一个数组里找一个满足条件的数的位置(index)
@@ -101,6 +102,8 @@ nums = [1,1], target = 1
 
 2. 二维数组换为一维数组
    如何把mid转换到二维数组上
+
+74. Search a 2D Matrix
    int start = 0, end = n * m - 1;
    iint mid = start + (end - start) / 2
    int row = mid / m;
@@ -112,7 +115,15 @@ nums = [1,1], target = 1
    while(nums[index] < target){
    		index = index * 2;
    }
+   这一步的时间复杂度是 log(target)
 4. 二分答案
    sqrt(x) 乘法时候int会溢出，要变成long
 
+
+
+287. Find the Duplicate Number
+1060. Missing Element in Sorted Array
+611. Valid Triangle Number
+二分答案
+875. Koko Eating Bananas
 

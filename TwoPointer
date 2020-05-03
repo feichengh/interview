@@ -29,7 +29,7 @@ while(i <= j){
 2. Partition的两个指针
 不能保证顺序，如果题目要求保留原来顺序就不能用partition
 215. Kth Largest Element in an Array
-
+973. K Closest Points to Origin
 模板：
 public void partition(int l, int r, int[] nums){
 	int left = l;

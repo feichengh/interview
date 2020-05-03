@@ -1,5 +1,5 @@
 Continues Subarray, Substring, Subsequence
-
+所有substring的时间复杂度是n平方
 
 一层循环
 674. Longest Continuous Increasing Subsequence

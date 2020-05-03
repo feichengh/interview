@@ -53,3 +53,4 @@ stack里存process id，时间不存
 20. Valid Parentheses
 弄个map key是左括号，value是右括号，遍历时候看每个char map.keySet().contains()还是map.values.contains()
 388. Longest Absolute File Path
+1249. Minimum Remove to Make Valid Parentheses

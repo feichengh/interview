@@ -139,6 +139,7 @@ local[i]选了第i个元素，满足条件的最大值
 
 背包类dp
 322. Coin Change
+416. Partition Equal Subset Sum
 题目特点：给一个背包的体积上限
 f[i][S] 前i个物品，取一些能不能使得和为S
 初始化第一行第一列：

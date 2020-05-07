@@ -33,6 +33,7 @@ StringBuilder.append(value)
 StringBuilder.length()
 StringBuilder.charAt()
 StringBuilder.deleteCharAt(tempRes.length() -1 );
+sb.reverse()
 
 ArrayList.add(index, value);
 ArrayList.remove(index);

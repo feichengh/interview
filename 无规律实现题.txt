@@ -63,11 +63,45 @@ tail = (tail + 1) % size;   head = (head + 1) % size;
 54. Spiral Matrix
 
 41. First Missing Positive
+
 166. Fraction to Recurring Decimal
+
 280. Wiggle Sort
+//题目对摇摆排序的定义有两部分：
+//如果i是奇数，nums[i] >= nums[i - 1]
+//如果i是偶数，nums[i] <= nums[i - 1]
+//所以我们只要遍历一遍数组，把不符合的情况交换一下就行了。具体来说，如果nums[i] > nums[i - 1]， 则交换以后肯定有nums[i] <= nums[i - 1]
 503. Next Greater Element II
-416. Partition Equal Subset Sum
-698. Partition to K Equal Sum Subsets
+因为是circular array，需要遍历两次数组
+public class Solution {
+
+    public int[] nextGreaterElements(int[] nums) {
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 2 * nums.length - 1; i >= 0; --i) {
+            while (!stack.empty() && nums[stack.peek()] <= nums[i % nums.length]) {
+                stack.pop();
+            }
+            res[i % nums.length] = stack.empty() ? -1 : nums[stack.peek()];
+            stack.push(i % nums.length);
+        }
+        return res;
+    }
+}
+
+
 442. Find All Duplicates in an Array
+ When find a number i, flip the number at position i-1 to negative. 
+ If the number at position i-1 is already negative, i is the number that occurs twice.
+
 223. Rectangle Area
+
 311. Sparse Matrix Multiplication
+
+498. Diagonal Traverse
+那么每移动一次，横纵坐标都要变化，向右上移动的话要坐标加上[-1, 1]，向左下移动的话要坐标加上[1, -1]
+
+
+
+287. Find the Duplicate Number
+sort

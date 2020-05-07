@@ -180,6 +180,7 @@ public int kthSmallest(TreeNode root, int k) {
 
 
 Divide and Conquer 
+669. Trim a Binary Search Tree
 426. Convert Binary Search Tree to Sorted Doubly Linked List 两个两个连 connect (connect (left, root), right)
 236. Lowest Common Ancestor of a Binary Tree
 863. All Nodes Distance K in Binary Tree  

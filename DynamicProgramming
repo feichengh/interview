@@ -28,6 +28,7 @@ Dynamic Programming
 935. Knight Dialer n3 三维dp通过交换两个2维dp数组实现
 983. Minimum Cost For Tickets 循环365天，要出行的那天就是 dp[i] = smin(i-7, I-5, i)
 1027. Longest Arithmetic Sequence
+673. Number of Longest Increasing Subsequence
 
 数组
  boolean[] can = new boolean[nums.length];

@@ -12,6 +12,8 @@ max = (a > b) ? a : b;
 treemap本来就是按照key排序好的
 TreeMap.firstKey();
 TreeMap.lastKey();
+TreeMap.floorEntry(); Finding greatest number less than given value
+TreeMap.floorKey();
 
 TreeSet.first();
 TreeSet.last();

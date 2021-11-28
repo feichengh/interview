@@ -18,14 +18,6 @@ TreeMap.floorKey();
 TreeSet.first();
 TreeSet.last();
 
-private Comparator<Pair> pairComparator = new Comparator<Pair>() {
-    public int compare(Pair left, Pair right) {
-        if (left.value != right.value) {
-            return left.value - right.value;
-        }
-        return right.key.compareTo(left.key);
-    }
-};
 
 Queue<Integer> q = new PriorityQueue<Integer>(k,pairComparator);//建k大小的堆
 list.get(rnd.nextInt(list.size()));
@@ -59,8 +51,6 @@ s.charAt(i)-'0';
 注意这里是double,否则除出来是整数
 
 
-
-
 for(char c : p.toCharArray()) {
             p_arr[c - 'a']++;
         }
@@ -84,6 +74,9 @@ Arrays.equals()
 Array to List
 List<String> l = new ArrayList<String>(Arrays.asList(dataList)
 
+        List<Integer> res = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+
 List to Array
 List<int[]> res = new ArrayList();
 //这里要typecast成int[][] 不然是object[]
@@ -103,11 +96,20 @@ Character.toLowerCase(string.charAt(index));
 
 
 Cast:
-String to Integer: Integer.parseInt(s)
+String to Integer: Integer.parseInt(s) "26" -> 26
 
 
 Map:
 m.putIfAbsent(a, 1);
  
 除法注意把数变成double,否则除出来是整数
+
+
+
+ File myObj = new File("filename.txt");
+ Scanner myReader = new Scanner(myObj);
+ while (myReader.hasNextLine()) {
+   String data = myReader.nextLine();
+   System.out.println(data);
+ }
 

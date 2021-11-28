@@ -192,6 +192,7 @@ Divide and Conquer
 114. Flatten Binary Tree to Linked List 左边的循环找最右，连在右边，然后连原左子树
 298. Binary Tree Longest Consecutive Sequence 全局变量最终结果，返回左最长右最长，如果当前点和左边不连续，左最长变成1，右边一样，返回以目前点最长的最长，更新全局变量
 
+333. Largest BST Subtree result type 返回以此为根的最小值，最大值和bst数目，和是不是bst 
 
 重建树
 109. Convert Sorted List to Binary Search Tree 如果找中点分别建树时间复杂度是o (nlogn)和mergesort一样，把一个事一分为二，每个子问题用n/2时间解决 n/2, 最优的解法是

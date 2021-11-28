@@ -3,6 +3,7 @@ LinkedList：
 链表的常规操作：
 1. Insert a Node in Sorted List
 2. Remove a Node from Linked List 删除节点一般都是把cur.next等于要删除的节点，这样就可以直接cur.next = cur.next.next
+改head 不指向 next了指向 pre
 3. Reverse a Linked List
 	public ListNode reverse(ListNode head) {
     	ListNode pre = null;

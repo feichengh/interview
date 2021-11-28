@@ -11,11 +11,11 @@ Coding
 621
 31
 一个向一个sorted的cycle linklist去insert一个数；
-301 简化的，不是原题那个要求，仅仅去除无效的后得到一个有效解即可
+301 简化的，不是原题那个要求，仅仅去除无效的后得到一个有效解即可 1249
 173 preorder
 BST iterator ，要用stack做。
 973
-238
+238.      
 robot room cleaner
 alien dict 两题
 Minimal knight move 1197
@@ -26,16 +26,16 @@ https://leetcode.com/problems/merge-k-sorted-lists/
 
 Coding 1：1. Most K frequent elements  2. lowest common ancester
 Coding 2: 1. Integer to English Words 2. get mutual frineds of X, Y, given the API friends(X) which returns the friends list of X. Just call friends(X) and friends(Y) and join them.
-54
-157
-158
+54 ---
+157 ---
+158 --- 
 20
 22
 415 小数
 33
 合并2个circular linkedlist, 要求返回最后合并的Linkedlist以及它的长度
 162
-Woodcut
+Woodcut ----
 判断string是否可以通过最多一个remove变palindrom
 follow up add two bigDecimal, eg:45.34 + 678.903
 two string multiplication
@@ -46,7 +46,7 @@ two string multiplication
 https://leetcode.com/problems/find-peak-element/
 278
 721
-1060
+1060 -----
 953
 112
 211
@@ -54,24 +54,28 @@ https://leetcode.com/problems/find-peak-element/
 380 381
 622
 1026
-773
+773 -------
 670
 438
-给一个grid 由 0，1组成 相邻的1可以组成岛屿 问如果把其中的某一个0换成1 能组成的最大的岛屿的size
+给一个grid 由 0，1组成 相邻的1可以组成岛屿 问如果把其中的某一个0换成1 能组成的最大的岛屿的size ----
 23
 236
 827
 34
-199 (bfs/dfs)
-43
+199 (bfs/dfs)  -----
+43 ----
 211
 后面出了一题，说给你一个有环的双向列表，要我排序
 238
-158
-273
+158 ----
+273 -----
 20
-稀疏向量inner product
-用最少的步骤使得括号字符串 valid；求某个长度内所有旋转180度后不变的数字；给定一个BST，求任意俩个数范围内所有节点值的总和；给定一堆定义上下级关系的二元组，查询任意两个人之间是否有上下级关系。给定一个api，每次可以从一个文件读孤单长度的字符串，用这个API实现一个新API，每次可以读任意长度字符串。
+稀疏向量inner product ---
+用最少的步骤使得括号字符串 valid；求某个长度内所有旋转180度后不变的数字；给定一个BST，求任意俩个数范围内所有节点值的总和；每次可以从一个文件读孤单长度的字符串，用这个API实现一个新API，每次可以读任意长度字符串。
+
+
+给定一堆定义上下级关系的二元组，查询任意两个人之间是否有上下级关系。给定一个api，
+
 
 
 code 都确实是高频题，有给一个2d矩阵找最大岛的size的；有给一个数组，找到每一个数右边最大的数的；
@@ -417,12 +421,7 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=614121&extra=page%
 
 第三轮coding，利口 扒扒，和利口 期扒舞
 
-前三轮都非常好，第四轮design真正体现出了virtual面试的弊端，design live comment system, 就是读者打开一个post，要能看到这个post实时更新comment。交流比较困难。现在内心很忐忑，也不知道面试官能不能手下留情，哎，design确实准备的还不够充分。第一轮 coding，利口 酒舞散 然后follow up过度到 尔溜酒，但尔溜酒是个hard，也跟面试官讨论完算法后，问她这个时间可能会不够的，面试官说没关系，没有写完也没关系，不过最后写完了，因为是codepad，速度上确实容易很多，比白板方便，打字快。
-
-第二轮 BQ + coding，最proud的project，期间go through 一些detail 问题，比如为什么proud, 具体metric怎么得到的，proposal怎么做出来的，design决定是谁来决定，然后问了重点问了conflict，和没有data的情况下，发生不同意见要怎么办。coding 是给一个list of string，问最长的buildable string是哪个，buildable 意思是所有prefix都在这个list里，比如 car，c, ca, car都在这个list里。面试官表示不要求最优解，短时间写出来就可以，把input build成hashmap, 在一个个看list里的string， check每一个prefix就可以。第三轮coding，利口 扒扒，和利口 期扒舞
-
 前三轮都非常好，第四轮design真正体现出了virtual面试的弊端，design live comment system, 就是读者打开一个post，要能看到这个post实时更新comment。交流比较困难。现在内心很忐忑，也不知道面试官能不能手下留情，哎，design确实准备的还不够充分。
-
 
 第一轮:
 1. 题库网 易灵尔溜
